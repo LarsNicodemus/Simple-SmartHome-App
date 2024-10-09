@@ -10,6 +10,7 @@
 		CE75F2232C8B1486001AD0A3 /* SmartHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75F2222C8B1486001AD0A3 /* SmartHomeApp.swift */; };
 		CE75F2272C8B1486001AD0A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE75F2262C8B1486001AD0A3 /* Assets.xcassets */; };
 		CE75F22A2C8B1486001AD0A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE75F2292C8B1486001AD0A3 /* Preview Assets.xcassets */; };
+		EE5D68202CB6BE1900CBE775 /* RoomViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D681F2CB6BE1900CBE775 /* RoomViewTwo.swift */; };
 		EEA200152CB3DEB7006489B8 /* SmartHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA200142CB3DEB7006489B8 /* SmartHomeView.swift */; };
 		EEA200402CB3E589006489B8 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA2003F2CB3E589006489B8 /* RoomView.swift */; };
 		EEA200422CB3F308006489B8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA200412CB3F308006489B8 /* HeaderView.swift */; };
@@ -25,6 +26,7 @@
 		CE75F2222C8B1486001AD0A3 /* SmartHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeApp.swift; sourceTree = "<group>"; };
 		CE75F2262C8B1486001AD0A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE75F2292C8B1486001AD0A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE5D681F2CB6BE1900CBE775 /* RoomViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewTwo.swift; sourceTree = "<group>"; };
 		EEA200142CB3DEB7006489B8 /* SmartHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeView.swift; sourceTree = "<group>"; };
 		EEA2003F2CB3E589006489B8 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		EEA200412CB3F308006489B8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				EEA2003F2CB3E589006489B8 /* RoomView.swift */,
 				EEA200682CB54347006489B8 /* DeviceListView.swift */,
 				EEA2006A2CB54799006489B8 /* DeviceGridView.swift */,
+				EE5D681F2CB6BE1900CBE775 /* RoomViewTwo.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				CE75F2232C8B1486001AD0A3 /* SmartHomeApp.swift in Sources */,
 				EEA200152CB3DEB7006489B8 /* SmartHomeView.swift in Sources */,
 				EEA2006B2CB54799006489B8 /* DeviceGridView.swift in Sources */,
+				EE5D68202CB6BE1900CBE775 /* RoomViewTwo.swift in Sources */,
 				EEA200642CB52B1F006489B8 /* Enums.swift in Sources */,
 				EEA200692CB54347006489B8 /* DeviceListView.swift in Sources */,
 				EEA200422CB3F308006489B8 /* HeaderView.swift in Sources */,

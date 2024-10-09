@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DeviceGridView: View {
     var device: SmartDevice = SmartDevice(name: "Wohnzimmerlicht", type: DeviceType.light)
+    var onDelete: () -> Void
     var body: some View {
             
         Text(device.name)
@@ -16,10 +17,16 @@ struct DeviceGridView: View {
             .background(.orange)
             .clipShape(.circle)
             .bold()
-                
+            .contextMenu {
+                        Button(role: .destructive) {
+                            onDelete()
+                        } label: {
+                            Label("Löschen", systemImage: "trash")
+                        }
+                    }
             }
         }
 
-#Preview {
-    DeviceGridView()
-}
+//#Preview {
+//    DeviceGridView()
+//}

@@ -15,10 +15,17 @@ struct SmartHomeView: View {
     @State private var listView = true
     @State private var smartDevices = [
         SmartDevice(name: "Wohnzimmerlicht", type: DeviceType.light),
+        SmartDevice(name: "Wohnzimmerlicht", type: DeviceType.light, isOn: true),
+        SmartDevice(name: "Wohnzimmerlicht", type: DeviceType.light, isOn: true),
         SmartDevice(name: "Heizung", type: DeviceType.thermostat),
+        SmartDevice(name: "Heizung", type: DeviceType.thermostat, temperature: 9.0),
+        SmartDevice(name: "Heizung", type: DeviceType.thermostat, temperature: 32.1),
+        SmartDevice(name: "Haustür", type: DeviceType.lock, isLocked: false),
         SmartDevice(name: "Haustür", type: DeviceType.lock),
+        SmartDevice(name: "Haustür", type: DeviceType.lock, isLocked: false),
         
     ]
+    @State private var selectedDeviceType: DeviceType = .light
     let rowHeight: CGFloat = 40
     let maxHeight: CGFloat = 400
     
@@ -31,16 +38,41 @@ struct SmartHomeView: View {
             
             ScrollView {
                 VStack {
-                    HStack {
-                        TextField("Schreib etwas...", text: $text)
-                            .padding(10)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.gray, lineWidth: 0.2)
-                            )
-                        
+                    VStack{
+                        HStack {
+                            TextField("Bezeichnung eingeben..", text: $text)
+                                .padding(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.gray, lineWidth: 0.2)
+                                )
+                            VStack {
+                                Picker("Select a device", selection: $selectedDeviceType) {
+                                    ForEach(DeviceType.allCases) { device in
+                                        HStack {
+                                            Image(systemName: device.symbolName)
+                                            Text(device.rawValue)
+                                        }
+                                        .tag(device)
+                                        
+                                    }
+                                }
+                                
+                                .background(.orange)
+                                .tint(.white)
+                                .cornerRadius(10)
+                                .pickerStyle(.menu)
+                                
+                            }
+                            
+                            
+                            
+                            
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.top, 16)
                         Button {
-                            addDevice(text, DeviceType.light)
+                            addDevice(text, selectedDeviceType)
                         } label: {
                             Text("Hinzufügen").foregroundColor(.white).fontWeight(.semibold)
                         }
@@ -48,10 +80,7 @@ struct SmartHomeView: View {
                         .background(.orange)
                         .clipShape(.rect)
                         .cornerRadius(10)
-                        
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.top, 16)
                     
                     Toggle(isOn: $listView) {
                         Text(listView ? "List" : "Grid")
@@ -60,26 +89,31 @@ struct SmartHomeView: View {
                     .padding(.horizontal, 16)
                     
                     if listView{
-                        ForEach(smartDevices) { device in
-                            DeviceListView(device: device)
+                        ForEach(smartDevices){ index in
+                            DeviceListView(device: index){
+                                deleteDevice(index)
+                            }
                         }
                     } else {
                         
                         Grid {
-                                    ForEach(Array(stride(from: 0, to: smartDevices.count, by: 3)), id: \.self) { index in
-                                        GridRow {
-                                            ForEach(index..<min(index + 3, smartDevices.count), id: \.self) { subIndex in
-                                                DeviceGridView(device: smartDevices[subIndex])
-                                            }
+                            ForEach(Array(stride(from: 0, to: smartDevices.count, by: 3)), id: \.self) { index in
+                                GridRow {
+                                    ForEach(index..<min(index + 3, smartDevices.count), id: \.self) { subIndex in
+                                        DeviceGridView(device: smartDevices[subIndex]){
+                                            deleteDevice(smartDevices[subIndex])
                                         }
                                     }
                                 }
+                            }
+                        }
                     }
                     
                     
                     if roomViewShown {
-                        RoomView(isShown: $roomViewShown)
-                            .padding(16)
+                        RoomView(isShown: $roomViewShown, devices: smartDevices)
+                            .padding(.horizontal, 16)
+                        
                     }
                     
                     Toggle(isOn: $roomViewShown) {
@@ -88,12 +122,19 @@ struct SmartHomeView: View {
                     .tint(.orange)
                     .padding(.horizontal, 16)
                 }
+                
             }
+            
         }
     }
     func addDevice (_ text: String,_ type: DeviceType){
-        let newDevice = SmartDevice(name: text, type: DeviceType.light)
+        let newDevice = SmartDevice(name: text, type: type)
         smartDevices.append(newDevice)
+    }
+    private func deleteDevice(_ device: SmartDevice) {
+        if let index = smartDevices.firstIndex(where: { $0.id == device.id }) {
+            smartDevices.remove(at: index)
+        }
     }
     
 }
