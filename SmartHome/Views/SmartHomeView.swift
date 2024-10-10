@@ -35,7 +35,7 @@ struct SmartHomeView: View {
             HeaderView()
                 .frame(maxWidth: .infinity)
             
-            
+            Spacer().frame(height: 16)
             ScrollView {
                 VStack {
                     VStack{
@@ -71,6 +71,7 @@ struct SmartHomeView: View {
                         }
                         .padding(.horizontal, 16)
                         .padding(.top, 16)
+                        Spacer().frame(height: 16)
                         Button {
                             addDevice(text, selectedDeviceType)
                         } label: {
@@ -81,18 +82,19 @@ struct SmartHomeView: View {
                         .clipShape(.rect)
                         .cornerRadius(10)
                     }
-                    
+                    Spacer().frame(height: 16)
                     Toggle(isOn: $listView) {
                         Text(listView ? "List" : "Grid")
                     }
                     .tint(.orange)
                     .padding(.horizontal, 16)
-                    
+                    Spacer().frame(height: 16)
                     if listView{
-                        ForEach(smartDevices){ index in
-                            DeviceListView(device: index){
+                        ForEach($smartDevices){ $index in
+                            SmartDeviceView(device: $index){
                                 deleteDevice(index)
                             }
+                            .padding(.horizontal, 16)
                         }
                     } else {
                         
@@ -103,24 +105,30 @@ struct SmartHomeView: View {
                                         DeviceGridView(device: smartDevices[subIndex]){
                                             deleteDevice(smartDevices[subIndex])
                                         }
+                                        .padding(.horizontal, 16)
                                     }
                                 }
                             }
                         }
                     }
-                    
+                        
+                    Spacer().frame(height: 16)
                     
                     if roomViewShown {
                         RoomView(isShown: $roomViewShown, devices: smartDevices)
                             .padding(.horizontal, 16)
                         
                     }
-                    
+                    Spacer().frame(height: 16)
                     Toggle(isOn: $roomViewShown) {
                         Text("Raumvorschau anzeigen")
                     }
                     .tint(.orange)
                     .padding(.horizontal, 16)
+                    Spacer().frame(height: 16)
+                    
+                    
+                    
                 }
                 
             }

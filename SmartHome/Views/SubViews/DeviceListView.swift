@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DeviceListView: View {
     
-    var device: SmartDevice = SmartDevice(name: "Wohnzimmerlicht", type: DeviceType.light)
+    var device: SmartDevice
     var onDelete: () -> Void
     var body: some View {
         
@@ -21,7 +21,9 @@ struct DeviceListView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
             Text("|")
         }
+        
         .padding(.horizontal, 16)
+        .padding(.vertical, 8)
         .contextMenu {
                     Button(role: .destructive) {
                         onDelete()
@@ -32,6 +34,7 @@ struct DeviceListView: View {
     }
 }
 
-//#Preview {
-//    DeviceListView()
-//}
+
+#Preview {
+    DeviceListView(device: SmartDevice(name: "Wohnzimmerlicht", type: DeviceType.light), onDelete: {print("gelöscht")})
+}

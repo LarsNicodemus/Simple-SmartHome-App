@@ -9,22 +9,15 @@ import SwiftUI
 
 struct RoomView: View {
     @Binding var isShown: Bool
-    var devices: [SmartDevice] = [
-        SmartDevice(name: "WZ", type: DeviceType.light),
-        SmartDevice(name: "Küche", type: DeviceType.light, isOn: true),
-        SmartDevice(name: "Bad", type: DeviceType.light, isOn: true),
-        SmartDevice(name: "Wohnzimmer", type: DeviceType.thermostat),
-        SmartDevice(name: "Küche", type: DeviceType.thermostat, temperature: 9.0),
-        SmartDevice(name: "Schlafzimmer", type: DeviceType.thermostat, temperature: 32.1),
-        SmartDevice(name: "Haustür", type: DeviceType.lock, isLocked: false),
-        SmartDevice(name: "Balkon", type: DeviceType.lock),
-        SmartDevice(name: "Gartenhütte", type: DeviceType.lock, isLocked: false),
-        
-    ]
+    @State private var minTemp = 0.0
+    @State private var maxTemp = 45.0
+    var devices: [SmartDevice]
+    
+    
     var body: some View {
         ZStack {
             BackgroundView()
-
+            
             VStack {
                 HStack {
                     Spacer()
@@ -38,7 +31,6 @@ struct RoomView: View {
                     }
                     .padding(.top, 16)
                     .padding(.trailing, 16)
-                    .alignmentGuide(.top) { d in d[.top] }
                 }
                 
                 
@@ -67,14 +59,16 @@ struct RoomView: View {
                             Text("\(device.name)")
                                 .foregroundColor(temperatureColor)
                                 .font(.caption)
-                            Image(systemName: imageName)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
-                                .foregroundStyle(temperatureColor)
-                            Text("\(String(format: "%.2f", device.temperature)) °C")
-                                .foregroundColor(temperatureColor)
-                                .font(.caption)
+                            Gauge(value: device.temperature, in: minTemp...maxTemp){
+                                Text("°C")
+                                    .foregroundColor(temperatureColor)
+                                    .font(.caption)
+                            } currentValueLabel: {
+                                Text("\(device.temperature.description)")
+                                    .foregroundColor(temperatureColor)
+                                    .font(.caption)
+                            }.gaugeStyle(.accessoryCircular)
+                                .tint(Gradient(colors: [.blue, .orange, .red]))
                         }
                     }
                 }
@@ -107,19 +101,30 @@ struct RoomView: View {
 
 
 struct BackgroundView: View {
-  var body: some View {
-    Image("Room")
-      .resizable()
-      .frame(width: .infinity, height: 300)
-      .clipped()
-      .cornerRadius(10)
-      
-  }
+    var body: some View {
+        Image("Room")
+            .resizable()
+            .frame(width: .infinity, height: 300)
+            .clipped()
+            .cornerRadius(10)
+        
+    }
 }
 
 
 #Preview {
-    RoomView(isShown: .constant(false))
+    RoomView(isShown: .constant(false),devices: [
+        SmartDevice(name: "WZ", type: DeviceType.light),
+        SmartDevice(name: "Küche", type: DeviceType.light, isOn: true),
+        SmartDevice(name: "Bad", type: DeviceType.light, isOn: true),
+        SmartDevice(name: "Wohnzimmer", type: DeviceType.thermostat),
+        SmartDevice(name: "Küche", type: DeviceType.thermostat, temperature: 9.0),
+        SmartDevice(name: "Schlafzimmer", type: DeviceType.thermostat, temperature: 32.1),
+        SmartDevice(name: "Haustür", type: DeviceType.lock, isLocked: false),
+        SmartDevice(name: "Balkon", type: DeviceType.lock),
+        SmartDevice(name: "Gartenhütte", type: DeviceType.lock, isLocked: false),
+        
+    ])
 }
 
 
