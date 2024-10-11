@@ -35,60 +35,74 @@ struct RoomView: View {
                 }
                 
                 
-                HStack (spacing: 20){
-                    ForEach(devices.filter { $0.type == .light }) { device in
-                        VStack{
-                            Image(systemName: "lamp.ceiling.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
-                                .foregroundStyle(device.isOn ? .orange : .black)
-                            Text("\(device.name)")
-                                .font(.caption)
-                        }
-                    }
-                }
+                ScrollView(.horizontal) {
+                                    HStack(spacing: 20) {
+                                        ForEach(devices.filter { $0.type == .light }) { device in
+                                            VStack {
+                                                Image(systemName: "lamp.ceiling.fill")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(width: 40, height: 40)
+                                                    .foregroundStyle(device.isOn ? .orange : .black)
+                                                Text("\(device.name)")
+                                                    .font(.caption)
+                                            }
+                                        }
+                                    }
+                                    .padding(.horizontal, 16)
+                                }
+                                .padding(.top, -85)
+                                .frame(height: 80)
                 
 
                 
                 Spacer()
-                HStack (spacing: 20){
-                    ForEach(devices.filter { $0.type == .thermostat }) { device in
-                        VStack {
-                            let temperatureColor: Color = device.temperature <= 10.0 ? .blue :
-                            device.temperature <= 25.0 ? .orange : .red
-                            Text("\(device.name)")
-                                .foregroundColor(temperatureColor)
-                                .font(.caption)
-                            Gauge(value: device.temperature, in: minTemp...maxTemp){
-                                Text("°C")
+                
+                ScrollView(.horizontal) {
+                    HStack (spacing: 20){
+                        ForEach(devices.filter { $0.type == .thermostat }) { device in
+                            VStack {
+                                let temperatureColor: Color = device.temperature <= 10.0 ? .blue :
+                                device.temperature <= 25.0 ? .orange : .red
+                                Text("\(device.name)")
                                     .foregroundColor(temperatureColor)
                                     .font(.caption)
-                            } currentValueLabel: {
-                                Text("\(device.temperature.description)")
-                                    .foregroundColor(temperatureColor)
-                                    .font(.caption)
-                            }.gaugeStyle(.accessoryCircular)
-                                .tint(Gradient(colors: [.blue, .orange, .orange, .red, .red]))
+                                Gauge(value: device.temperature, in: minTemp...maxTemp){
+                                    Text("°C")
+                                        .foregroundColor(temperatureColor)
+                                        .font(.caption)
+                                } currentValueLabel: {
+                                    Text("\(device.temperature.description)")
+                                        .foregroundColor(temperatureColor)
+                                        .font(.caption)
+                                }.gaugeStyle(.accessoryCircular)
+                                    .tint(Gradient(colors: [.blue, .orange, .orange, .red, .red]))
+                            }
                         }
                     }
+                    .padding(.horizontal, 16)
+                }
+                .padding(.top, -45)
+                .frame(height: 80)
+                Spacer()
+                ScrollView(.horizontal){
+                    HStack (spacing: 20){
+                        ForEach(devices.filter { $0.type == .lock }) { device in
+                            let imageName = device.isLocked ? "door.left.hand.closed" : "door.left.hand.open"
+                            VStack{
+                                Text("\(device.name)")
+                                    .font(.caption)
+                                Image(systemName: imageName)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 16)
                 }
                 
-                Spacer()
-                HStack (spacing: 20){
-                    ForEach(devices.filter { $0.type == .lock }) { device in
-                        let imageName = device.isLocked ? "door.left.hand.closed" : "door.left.hand.open"
-                        VStack{
-                            Text("\(device.name)")
-                                .font(.caption)
-                            Image(systemName: imageName)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(.black)
-                        }
-                    }
-                }
                 
                 
             }
