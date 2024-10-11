@@ -17,6 +17,7 @@ struct RoomView: View {
     var body: some View {
         ZStack {
             BackgroundView()
+                .shadow(color: .orange,radius: 2,y: 2)
             
             VStack {
                 HStack {
@@ -48,12 +49,12 @@ struct RoomView: View {
                     }
                 }
                 
+
+                
                 Spacer()
                 HStack (spacing: 20){
                     ForEach(devices.filter { $0.type == .thermostat }) { device in
                         VStack {
-                            let imageName = device.temperature <= 10.0 ? "thermometer.low" :
-                            device.temperature <= 25.0 ? "thermometer.medium" : "thermometer.high"
                             let temperatureColor: Color = device.temperature <= 10.0 ? .blue :
                             device.temperature <= 25.0 ? .orange : .red
                             Text("\(device.name)")
@@ -68,7 +69,7 @@ struct RoomView: View {
                                     .foregroundColor(temperatureColor)
                                     .font(.caption)
                             }.gaugeStyle(.accessoryCircular)
-                                .tint(Gradient(colors: [.blue, .orange, .red]))
+                                .tint(Gradient(colors: [.blue, .orange, .orange, .red, .red]))
                         }
                     }
                 }
@@ -92,10 +93,11 @@ struct RoomView: View {
                 
             }
             
-            .frame(width: .infinity, height: 300)
+            .frame(maxHeight: 300)
             
             
         }
+        
     }
 }
 
@@ -104,8 +106,7 @@ struct BackgroundView: View {
     var body: some View {
         Image("Room")
             .resizable()
-            .frame(width: .infinity, height: 300)
-            .clipped()
+            .frame(maxWidth: .infinity, maxHeight: 300)
             .cornerRadius(10)
         
     }
@@ -114,15 +115,15 @@ struct BackgroundView: View {
 
 #Preview {
     RoomView(isShown: .constant(false),devices: [
-        SmartDevice(name: "WZ", type: DeviceType.light),
-        SmartDevice(name: "Küche", type: DeviceType.light, isOn: true),
-        SmartDevice(name: "Bad", type: DeviceType.light, isOn: true),
-        SmartDevice(name: "Wohnzimmer", type: DeviceType.thermostat),
-        SmartDevice(name: "Küche", type: DeviceType.thermostat, temperature: 9.0),
-        SmartDevice(name: "Schlafzimmer", type: DeviceType.thermostat, temperature: 32.1),
-        SmartDevice(name: "Haustür", type: DeviceType.lock, isLocked: false),
-        SmartDevice(name: "Balkon", type: DeviceType.lock),
-        SmartDevice(name: "Gartenhütte", type: DeviceType.lock, isLocked: false),
+        MOCKDEVICE1,
+        MOCKDEVICE2,
+        MOCKDEVICE3,
+        MOCKDEVICE4,
+        MOCKDEVICE5,
+        MOCKDEVICE6,
+        MOCKDEVICE7,
+        MOCKDEVICE8,
+        MOCKDEVICE9,
         
     ])
 }

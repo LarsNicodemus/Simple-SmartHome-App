@@ -20,6 +20,7 @@
 		EEA200662CB52B73006489B8 /* SmartDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA200652CB52B70006489B8 /* SmartDevice.swift */; };
 		EEA200692CB54347006489B8 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA200682CB54347006489B8 /* DeviceListView.swift */; };
 		EEA2006B2CB54799006489B8 /* DeviceGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA2006A2CB54799006489B8 /* DeviceGridView.swift */; };
+		EEBBF4CC2CB93B99007C8368 /* Mockdevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBF4CB2CB93B90007C8368 /* Mockdevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		EEA200652CB52B70006489B8 /* SmartDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartDevice.swift; sourceTree = "<group>"; };
 		EEA200682CB54347006489B8 /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
 		EEA2006A2CB54799006489B8 /* DeviceGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGridView.swift; sourceTree = "<group>"; };
+		EEBBF4CB2CB93B90007C8368 /* Mockdevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockdevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		CE75F2282C8B1486001AD0A3 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				EEBBF4CB2CB93B90007C8368 /* Mockdevice.swift */,
 				CE75F2292C8B1486001AD0A3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -205,6 +208,7 @@
 				EEA2006B2CB54799006489B8 /* DeviceGridView.swift in Sources */,
 				EE5D68202CB6BE1900CBE775 /* RoomViewTwo.swift in Sources */,
 				EEA200642CB52B1F006489B8 /* Enums.swift in Sources */,
+				EEBBF4CC2CB93B99007C8368 /* Mockdevice.swift in Sources */,
 				EEA200692CB54347006489B8 /* DeviceListView.swift in Sources */,
 				EEA200422CB3F308006489B8 /* HeaderView.swift in Sources */,
 			);

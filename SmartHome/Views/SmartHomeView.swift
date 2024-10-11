@@ -69,7 +69,6 @@ struct SmartHomeView: View {
                             
                             
                         }
-                        .padding(.horizontal, 16)
                         .padding(.top, 16)
                         Spacer().frame(height: 16)
                         Button {
@@ -87,14 +86,12 @@ struct SmartHomeView: View {
                         Text(listView ? "List" : "Grid")
                     }
                     .tint(.orange)
-                    .padding(.horizontal, 16)
                     Spacer().frame(height: 16)
                     if listView{
                         ForEach($smartDevices){ $index in
                             SmartDeviceView(device: $index){
                                 deleteDevice(index)
                             }
-                            .padding(.horizontal, 16)
                         }
                     } else {
                         
@@ -105,7 +102,6 @@ struct SmartHomeView: View {
                                         DeviceGridView(device: smartDevices[subIndex]){
                                             deleteDevice(smartDevices[subIndex])
                                         }
-                                        .padding(.horizontal, 16)
                                     }
                                 }
                             }
@@ -116,7 +112,6 @@ struct SmartHomeView: View {
                     
                     if roomViewShown {
                         RoomView(isShown: $roomViewShown, devices: smartDevices)
-                            .padding(.horizontal, 16)
                         
                     }
                     Spacer().frame(height: 16)
@@ -124,12 +119,11 @@ struct SmartHomeView: View {
                         Text("Raumvorschau anzeigen")
                     }
                     .tint(.orange)
-                    .padding(.horizontal, 16)
                     Spacer().frame(height: 16)
                     
                     
                     
-                }
+                }.padding(.horizontal, 16)
                 
             }
             

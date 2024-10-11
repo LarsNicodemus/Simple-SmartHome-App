@@ -28,5 +28,5 @@ struct DeviceGridView: View {
         }
 
 #Preview {
-    DeviceGridView(device: SmartDevice(name: "Wohnzimmerlicht", type: DeviceType.light), onDelete: {print("gelöscht")})
+    DeviceGridView(device: MOCKDEVICE1, onDelete: {print("gelöscht")})
 }

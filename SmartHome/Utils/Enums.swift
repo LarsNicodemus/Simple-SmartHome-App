@@ -9,6 +9,8 @@ enum DeviceType: String, CaseIterable, Identifiable {
     case light = "Licht"
     case thermostat = "Heizung"
     case lock = "Schloss"
+    case sound = "Musik"
+    case powerOutlet = "Steckdose"
     
     var id: String { rawValue }
     
@@ -19,7 +21,11 @@ enum DeviceType: String, CaseIterable, Identifiable {
         case .thermostat:
             return "thermometer"
         case .lock:
-            return "lock.fill" 
+            return "lock.fill"
+        case .sound:
+            return "homepod.fill"
+        case .powerOutlet:
+            return "poweroutlet.type.c.square.fill"
         }
     }
 }

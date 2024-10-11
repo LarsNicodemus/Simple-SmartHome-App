@@ -22,7 +22,6 @@ struct DeviceListView: View {
             Text("|")
         }
         
-        .padding(.horizontal, 16)
         .padding(.vertical, 8)
         .contextMenu {
                     Button(role: .destructive) {
@@ -36,5 +35,5 @@ struct DeviceListView: View {
 
 
 #Preview {
-    DeviceListView(device: SmartDevice(name: "Wohnzimmerlicht", type: DeviceType.light), onDelete: {print("gelöscht")})
+    DeviceListView(device: MOCKDEVICE1, onDelete: {print("gelöscht")})
 }
