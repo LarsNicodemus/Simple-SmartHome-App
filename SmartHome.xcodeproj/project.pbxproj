@@ -20,6 +20,11 @@
 		EEA200662CB52B73006489B8 /* SmartDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA200652CB52B70006489B8 /* SmartDevice.swift */; };
 		EEA200692CB54347006489B8 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA200682CB54347006489B8 /* DeviceListView.swift */; };
 		EEA2006B2CB54799006489B8 /* DeviceGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA2006A2CB54799006489B8 /* DeviceGridView.swift */; };
+		EEB4FCDE2CEDFB5B006A48E3 /* PopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4FCDD2CEDFB5B006A48E3 /* PopOverView.swift */; };
+		EEB4FCE12CEE0845006A48E3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4FCE02CEE083D006A48E3 /* HomeViewModel.swift */; };
+		EEB4FCE32CEE0FE1006A48E3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4FCE22CEE0FE1006A48E3 /* HomeView.swift */; };
+		EEB4FCE52CEE1BBB006A48E3 /* SmartDeviceGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4FCE42CEE1BB3006A48E3 /* SmartDeviceGridView.swift */; };
+		EEB4FCE72CEE3223006A48E3 /* SmartDeviceRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB4FCE62CEE3223006A48E3 /* SmartDeviceRoomView.swift */; };
 		EEBBF4CC2CB93B99007C8368 /* Mockdevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBF4CB2CB93B90007C8368 /* Mockdevice.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +43,11 @@
 		EEA200652CB52B70006489B8 /* SmartDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartDevice.swift; sourceTree = "<group>"; };
 		EEA200682CB54347006489B8 /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
 		EEA2006A2CB54799006489B8 /* DeviceGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGridView.swift; sourceTree = "<group>"; };
+		EEB4FCDD2CEDFB5B006A48E3 /* PopOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverView.swift; sourceTree = "<group>"; };
+		EEB4FCE02CEE083D006A48E3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EEB4FCE22CEE0FE1006A48E3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EEB4FCE42CEE1BB3006A48E3 /* SmartDeviceGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartDeviceGridView.swift; sourceTree = "<group>"; };
+		EEB4FCE62CEE3223006A48E3 /* SmartDeviceRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartDeviceRoomView.swift; sourceTree = "<group>"; };
 		EEBBF4CB2CB93B90007C8368 /* Mockdevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockdevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +81,7 @@
 		CE75F2212C8B1486001AD0A3 /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
+				EEB4FCDF2CEE079F006A48E3 /* ViewModels */,
 				EEA200612CB52B00006489B8 /* Utils */,
 				EEA200132CB3DE8B006489B8 /* Views */,
 				EEA200122CB3DE84006489B8 /* Models */,
@@ -118,6 +129,7 @@
 		EEA200672CB52B7F006489B8 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				EEB4FCE42CEE1BB3006A48E3 /* SmartDeviceGridView.swift */,
 				EEA200532CB4070F006489B8 /* SmartHomeQuickAccessButton.swift */,
 				EEA200412CB3F308006489B8 /* HeaderView.swift */,
 				EEA2003F2CB3E589006489B8 /* RoomView.swift */,
@@ -125,8 +137,19 @@
 				EEA2006A2CB54799006489B8 /* DeviceGridView.swift */,
 				EE5D681F2CB6BE1900CBE775 /* RoomViewTwo.swift */,
 				EE1D84FA2CB7CB0400D9950C /* SmartDeviceView.swift */,
+				EEB4FCDD2CEDFB5B006A48E3 /* PopOverView.swift */,
+				EEB4FCE22CEE0FE1006A48E3 /* HomeView.swift */,
+				EEB4FCE62CEE3223006A48E3 /* SmartDeviceRoomView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		EEB4FCDF2CEE079F006A48E3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EEB4FCE02CEE083D006A48E3 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,15 +222,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEB4FCE72CEE3223006A48E3 /* SmartDeviceRoomView.swift in Sources */,
 				EEA200662CB52B73006489B8 /* SmartDevice.swift in Sources */,
 				EEA200542CB4071A006489B8 /* SmartHomeQuickAccessButton.swift in Sources */,
 				EEA200402CB3E589006489B8 /* RoomView.swift in Sources */,
+				EEB4FCE32CEE0FE1006A48E3 /* HomeView.swift in Sources */,
 				EE1D84FB2CB7CB0400D9950C /* SmartDeviceView.swift in Sources */,
 				CE75F2232C8B1486001AD0A3 /* SmartHomeApp.swift in Sources */,
 				EEA200152CB3DEB7006489B8 /* SmartHomeView.swift in Sources */,
 				EEA2006B2CB54799006489B8 /* DeviceGridView.swift in Sources */,
 				EE5D68202CB6BE1900CBE775 /* RoomViewTwo.swift in Sources */,
+				EEB4FCDE2CEDFB5B006A48E3 /* PopOverView.swift in Sources */,
+				EEB4FCE12CEE0845006A48E3 /* HomeViewModel.swift in Sources */,
 				EEA200642CB52B1F006489B8 /* Enums.swift in Sources */,
+				EEB4FCE52CEE1BBB006A48E3 /* SmartDeviceGridView.swift in Sources */,
 				EEBBF4CC2CB93B99007C8368 /* Mockdevice.swift in Sources */,
 				EEA200692CB54347006489B8 /* DeviceListView.swift in Sources */,
 				EEA200422CB3F308006489B8 /* HeaderView.swift in Sources */,
@@ -351,6 +379,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +408,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

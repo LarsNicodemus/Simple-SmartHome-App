@@ -20,3 +20,21 @@ var MOCKDEVICE12 = SmartDevice(name: "Mock Sound 3", type: .sound)
 var MOCKDEVICE13 = SmartDevice(name: "Mock Power 1", type: .powerOutlet, isOn: true)
 var MOCKDEVICE14 = SmartDevice(name: "Mock Power 2", type: .powerOutlet)
 var MOCKDEVICE15 = SmartDevice(name: "Mock Power 3", type: .powerOutlet)
+
+
+var mockDevices = [
+    SmartDevice(name: "Wohnzimmerlicht", type: DeviceType.light),
+    SmartDevice(
+        name: "Wohnzimmerlicht", type: DeviceType.light, isOn: true),
+    SmartDevice(
+        name: "Wohnzimmerlicht", type: DeviceType.light, isOn: true),
+    SmartDevice(name: "Heizung", type: DeviceType.thermostat),
+    SmartDevice(
+        name: "Heizung", type: DeviceType.thermostat, temperature: 9.0),
+    SmartDevice(
+        name: "Heizung", type: DeviceType.thermostat, temperature: 32.1),
+    SmartDevice(name: "Haustür", type: DeviceType.lock, isLocked: false),
+    SmartDevice(name: "Haustür", type: DeviceType.lock),
+    SmartDevice(name: "Haustür", type: DeviceType.lock, isLocked: false),
+
+]
