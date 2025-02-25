@@ -1,38 +1,38 @@
 # Simple SmartHome App
 
-Dieses Projekt ist eine einfache SmartHome-App, die im Rahmen des iOS-Moduls am Syntax Institut entwickelt wurde. Es handelt sich um die zweite App, die im Kurs erstellt wurde, und dient dazu, die Konzepte von States und Bindings, `foreach`-Schleifen, dem `Identifiable`-Protokoll und dem `Picker`-Steuerelement in SwiftUI zu vertiefen.
+This project is a simple SmartHome app developed as part of the iOS module at the Syntax Institute. It is the second app created in the course and focuses on concepts such as States and Bindings, `foreach` loops, the `Identifiable` protocol, and the `Picker` control in SwiftUI.
 
-## Über die App
+## About the App
 
-Die Simple SmartHome-App simuliert die Steuerung von Geräten in einem intelligenten Zuhause. Benutzer können verschiedene Geräte auswählen, deren Zustand (ein/aus) ändern und die Helligkeit von Lampen anpassen. Die App demonstriert, wie man Zustände in SwiftUI verwaltet, Daten an Views bindet und Collections mit `foreach` durchläuft.
+The Simple SmartHome App simulates the control of devices in a smart home. Users can select different devices, toggle their state (on/off), and adjust the brightness of lamps. The app demonstrates how to manage states in SwiftUI, bind data to views, and iterate through collections using `foreach`.
 
-## Funktionen
+## Features
 
-- **Geräteverwaltung**: Anzeige einer Liste von SmartHome-Geräten.
-- **Zustandssteuerung**: Ein- und Ausschalten von Geräten.
-- **Helligkeitsregelung**: Anpassung der Helligkeit von Lampen mit einem Schieberegler.
-- **Geräteauswahl**: Auswahl von Geräten über einen Picker.
+- **Device Management**: Display a list of smart home devices.
+- **State Control**: Turn devices on and off.
+- **Brightness Adjustment**: Adjust the brightness of lamps using a slider.
+- **Device Selection**: Select devices using a picker.
 
-## Technologien und Konzepte
+## Technologies and Concepts
 
-- **States und Bindings**: Verwaltung und Synchronisation des Zustands der Benutzeroberfläche.
-- **`foreach`**: Iteration über eine Liste von Geräten zur dynamischen Erstellung der UI.
-- **`Identifiable`**: Eindeutige Identifizierung von Geräten in der Liste.
-- **`Picker`**: Auswahl von Geräten aus einer Liste.
+- **States and Bindings**: Managing and synchronizing the state of the user interface.
+- **`foreach`**: Iterating over a list of devices to dynamically create the UI.
+- **`Identifiable`**: Uniquely identifying devices in the list.
+- **`Picker`**: Selecting devices from a list.
 
 ## Installation
 
-1. Klonen Sie das Repository:
+1. Clone the repository:
    ```bash
    git clone https://github.com/LarsNicodemus/Simple-SmartHome-App.git
-Öffnen Sie das Projekt in Xcode.
+Open the project in Xcode.
 
-Führen Sie die App auf einem Simulator oder einem physischen Gerät aus.
+Run the app on a simulator or a physical device.
 
-### Beitrag
-Beiträge sind willkommen! Bitte erstellen Sie einen Pull Request oder öffnen Sie ein Issue, um Verbesserungen oder Fehler zu melden.
+### Contributing
+Contributions are welcome! Please create a pull request or open an issue to suggest improvements or report bugs.
 
-### Lizenz
-Dieses Projekt ist unter der MIT-Lizenz lizenziert. Weitere Informationen finden Sie in der LICENSE-Datei.
+### License
+This project is licensed under the MIT License. For more information, see the LICENSE file.
 
-Hinweis: Diese App wurde im Rahmen des iOS-Moduls am Syntax Institut entwickelt und dient primär Lehrzwecken.
+Note: This app was developed as part of the iOS module at the Syntax Institute and is primarily intended for educational purposes.
